@@ -3,10 +3,9 @@
 
 <head>
     <link rel="stylesheet" href="style.css">
-</head>
+   </head>
 
 <body>
-
     <div class="container">
         <div class="left-section"></div>
         <div class="right-section">
@@ -17,71 +16,80 @@
             <div class="login-heading2">
                 <p>Don't have an account? <a href="#">Sign up</a></p>
             </div>
-            <div class="username-label">
-                Username
+            <div class="input-container">
+                <div class="username-label">
+                    Username
+                </div>
+                <input type="text" placeholder="Enter your username">
+                <div class="username-icon"></div>
             </div>
-            <input type="text" placeholder="Enter your username">
-            <div class="password-label">
-                Password
+
+            <div class="input-container">
+                <div class="password-label">
+                    Password
+                </div>
+                <input type="password" placeholder="Enter your password">
+                <div class="password-icon"></div>
             </div>
-            <input type="password" placeholder="Enter your password">
+
             <div class="checkbox-container">
                 <input type="checkbox" id="keep-logged-in">
-                <label style="margin-right: 14vw;" for="keep-logged-in">Keep me logged in</label>
-                <a  class="forgot-password" href="#">Forgot password</a>
+                <label style="margin-right: 10%;" for="keep-logged-in">Keep me logged in</label>
+                <a class="forgot-password" href="#">Forgot password</a>
             </div>
             <button class="login-btn">Login</button>
         </div>
     </div>
+
+    <script>
+        function validateForm() {
+            var username = document.querySelector('input[type="text"]').value;
+            var password = document.querySelector('input[type="password"]').value;
+
+            // Check if the username and password are empty
+            if (username === "" || password === "") {
+                alert("Please enter both username and password.");
+                return false;
+            }
+
+            // Check if the entered username and password match the predefined values
+            var validUsername = "admin";
+            var validPassword = "password";
+            var student1 = "najeebUllah";
+            var password1 = "najeeb123";
+            var student2 = "Sarim Effendi";
+            var password2 = "sarim123";
+            var student3 = "Anish";
+            var password3 = "anish123";
+
+            if (username === validUsername && password === validPassword) {
+                window.location.href = "#";
+            } else if (username === student1 && password === password1) {
+                window.location.href = "#";
+            } else if (username === student2 && password === password2) {
+                window.location.href = "#";
+            } else if (username === student3 && password === password3) {
+                window.location.href = "#";
+            } else {
+                alert("Invalid username or password. Please try again.");
+                return false;
+            }
+        }
+
+        // Toggle password visibility
+        var passwordIcon = document.querySelector('.password-icon');
+        var passwordInput = document.querySelector('input[type="password"]');
+
+        passwordIcon.addEventListener('click', function () {
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                passwordIcon.style.backgroundImage = "url('./assets/icons8-eye-100.png')";
+            } else {
+                passwordInput.type = 'password';
+                passwordIcon.style.backgroundImage = "url('./assets/icons8-closed-eye-100.png')";
+            }
+        });
+    </script>
 </body>
 
 </html>
-<script>
-    function validateForm() {
-        var username = document.querySelector('input[type="text"]').value;
-        var password = document.querySelector('input[type="password"]').value;
-
-        // Check if the username and password are empty
-        if (username === "" || password === "") {
-            alert("Please enter both username and password.");
-            return false;
-        }
-
-        // Check if the entered username and password match the predefined values
-        var validUsername = "admin";
-        var validPassword = "password";
-        var student1 = "najeebUllah";
-        var password1 = "najeeb123";
-        var student2 = "Sarim Effendi";
-        var password2 = "sarim123";
-
-        var student3 = "Anish";
-        var password3 = "anish123";
-
-
-        if (username === validUsername && password === validPassword) {
-            window.location.href = "#";
-        } 
-        else  if (username === student1 && password === password1){
-            window.location.href = "#";
-
-        }
-        else  if (username === student2 && password === password2){
-            window.location.href = "#";
-
-        }
-        else  if (username === student3 && password === password3){
-            window.location.href = "#";
-
-        }
-        else {
-            alert("Invalid username or password.");
-            return false;
-        }
-    }
-
-    window.onload = function () {
-        var loginBtn = document.querySelector(".login-btn");
-        loginBtn.addEventListener("click", validateForm);
-    };
-</script>
