@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../course-dashboard/course.css">
+</head>
+<style>
+   .container {
+            width: 80%;
+            height: 100%;
+            margin: auto;
+            padding: 20px;
+            box-sizing: border-box;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            position: relative;
+            top: 10%;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0px;
+        }
+
+        caption {
+            background-color: #4C6FBF;
+            color: white;
+            padding: 8px;
+            text-align: center;
+            border: 1px solid silver;
+            border-bottom: none;
+            transition: box-shadow 0.3s;
+        }
+
+        thead {
+            background-color: #4C6FBF;
+            color: white;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+            border: 1px solid silver;
+            transition: box-shadow 0.3s;
+        }
+
+        .container tbody tr td:nth-child(6) a,
+        tbody tr td:nth-child(7) a {
+            color: blue;
+        }
+
+        tbody tr:hover {
+            scale: (1.1);
+        }
+
+        .data-container {
+            width: 80%;
+            height: 5%;
+            max-height: 5%;
+            margin: auto;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid silver;
+            
+        }
+
+        .column {
+            display: flex;
+            margin-bottom: 70px;
+            transition: transform 0.3 ease;
+
+        }
+
+        .column label {
+            font-weight: bold;
+            width: 120px;
+
+        }
+
+   
+
+        .data-container {
+            display: flex;
+            gap: 50px;
+            transition: transform 0.3s ease;
+        }
+
+        .data-container:hover {
+            transform: scale(1.1);
+        }
+
+        .btn {
+            background-color: #4C6FBF;
+            width: 45%;
+            border: none;
+            border-radius: 10px;
+            margin: 15px;
+            font-size: 20px;
+            padding: 10px;
+        }
+
+        .btn:hover {
+            background-color: #2F4A8F;
+        }
+
+        input[type="text"] {
+            position: relative;
+            left: 40%;
+
+            width: 25%;
+            font-size: 20px;
+            margin: 15px;
+            border: none;
+            background-color: #F2F2F2;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+
+
+        .approved-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 16px;
+            font-size: 16px;
+            border-radius: 4px;
+        }
+
+        .add-button {
+            background-color: #4C6FBF;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .add-button:hover {
+            background-color: #2F4A8F;
+        }
+        .add-button.disabled {
+            background-color: gray;
+            cursor: not-allowed;
+        }
+
+
+    
+</style>
+<body>
+
+  <div class="dashboard">
+    <div class="sec-1">
+
+
+      <nav>
+
+        <div class="sidebar">
+          <div class="logo">
+            <span class="logo-name">
+              <div class="profile">
+              <img src="../images/profile.png" >
+              </div>
+                <p>
+                  <ul class="bio" style="list-style: none">
+                    <li>Sarim </li>
+                    <li>2012307</li>
+                    <li>BSCS-6E</li>
+                  </ul>
+                </p>
+            </span>
+          </div>
+
+          <div class="sidebar-content">
+            <ul class="lists">
+              <li class="list">
+                <a href="../course-dashboard/course.html" class="nav-link">
+                  <i class="bx bx-bar-chart-alt-2 icon"></i>
+                  <span class="link">Current Semester</span>
+                </a>
+              </li>
+
+              <li class="list">
+                <a href="../course-dashboard/Reg.html" class="nav-link">
+                  <!-- <img src="book-icon.png" alt="" style="width: 20px;" > -->
+                  <span class="link">Course Registration </span>
+                </a>
+              </li>
+
+              <li class="list">
+                <a href="../course-dashboard/imp.html" class="nav-link">
+                  <i class="bx bx-bar-chart-alt-2 icon"></i>
+                  <span class="link">Course improve</span>
+                </a>
+              </li>
+
+            
+              <li class="list">
+                <a href="../course-dashboard/result.html" class="nav-link">
+                  <span class="link">Semester Result</span>
+                </a>
+              </li>
+              <li class="list">
+                <a href="../course-dashboard/Previous.html" class="nav-link">
+                  <span class="link">Previous Semester</span>
+                </a>
+              </li>
+
+              <li class="list">
+                <a href="../course-dashboard/Schedule.html" class="nav-link">
+                  <span class="link">Schedule</span>
+                </a>
+              </li>
+
+            </ul>
+
+            <div class="bottom-cotent">
+              <li class="list">
+                <a href="#" class="nav-link">
+                  <span class="link">Settings</span>
+                </a>
+              </li>
+              <li class="list">
+                <a href="../login.html" class="nav-link">
+                  <!-- <img src="" alt=""> -->
+                  <span class="link">Logout</span>
+                </a>
+              </li>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+    <div class="sec-2">
+      <nav>
+        <h1>Course Registration</h1>
+        
+        <!-- <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+          <g>
+            <path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z">
+            </path>
+          </g>
+        </svg>
+        <input type="text" placeholder="Search course"> -->
+        <div class="search">
+          <div class="group">
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+              <g>
+                <path
+                  d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z">
+                </path>
+              </g>
+            </svg>
+            <input placeholder="Search" type="search" class="input" id="searchInput">
+          </div>
+        </div>
+
+      </nav>
+
+ 
+
+      <!-- TABLE -->
+
+      <div class="container">
+        <div class="data-container">
+            <div class="column">
+                <label>Student:</label>
+                <span>Muhammad Sarim Effendi - 2012304</span>
+            </div>
+            <div class="column">
+                <label>Section:</label>
+                <span>BCS/BS 6 E</span>
+            </div>
+        </div>
+
+        <table id="selected-courses">
+            <caption>Selected Courses</caption>
+            <thead>
+                <tr>
+                    <th width="10%">#Sr</th>
+                    <th width="55%">Course Name</th>
+                    <th width="25%">Faculty Name</th>
+                    <th width="10%"> Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        <button id="resetButton" class="btn" onclick="resetTable()">Reset</button>
+        <button id="submitButton" class="btn" onclick="submitCourses()">Submit</button>
+
+
+        <table id="available-courses">
+            <caption>Available Courses</caption>
+            <thead>
+                <tr>
+                    <th width="10%">#Sr</th>
+                    <th width="55%">Course Name</th>
+                    <th width="25%">Faculty Name</th>
+                    <th width="10%"> </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>CSC1205 Technical and Business Writing (3,0)</td>
+                    <td>Ijlal Hussain</td>
+                    <td><button class="add-button">Add</button></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>CSC4101 Artificial Intelligence (3,0)</td>
+                    <td>Ali Zaman</td>
+                    <td><button class="add-button">Add</button></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>CSC4802 Android Application Development (3,0)</td>
+                    <td>Daniyal Nawaz</td>
+                    <td><button class="add-button">Add</button></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>CSC4101 Artificial Intelligence lab(0,1)</td>
+                    <td>Wali Muhammad Khubaib</td>
+                    <td><button class="add-button">Add</button></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>CSCL3205 Lab: Computer Networks and Data Communications (0,1)</td>
+                    <td>Mubeen Ahmed</td>
+                    <td><button class="add-button">Add</button></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>CSC3205 Computer Networks and Data Communications (3,0)</td>
+                    <td>Shahzad Haroon</td>
+                    <td><button class="add-button">Add</button></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>CSC4724 User Interface Design (3,0)</td>
+                    <td>Ali Mobin</td>
+                    <td><button class="add-button">Add</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+  </div>
+
+
+
+  </div>
+  <script>
+  
+  window.addEventListener('DOMContentLoaded', (event) => {
+        const searchInput = document.querySelector('input[type="text"]');
+        const availableCourses = document.querySelectorAll('#available-courses tbody tr');
+        const selectedCoursesTable = document.querySelector('#selected-courses tbody');
+        const resetButton = document.querySelector('#resetButton');
+        const submitButton = document.querySelector('#submitButton');
+
+        searchInput.addEventListener('input', () => {
+            const searchValue = searchInput.value.toLowerCase();
+
+            availableCourses.forEach((course) => {
+                const courseName = course.querySelector('td:nth-child(2)').textContent.toLowerCase();
+                const facultyName = course.querySelector('td:nth-child(3)').textContent.toLowerCase();
+
+                if (courseName.includes(searchValue) || facultyName.includes(searchValue)) {
+                    course.style.display = '';
+                } else {
+                    course.style.display = 'none';
+                }
+            });
+        });
+
+        availableCourses.forEach((course) => {
+            const addButton = course.querySelector('.add-button');
+
+            addButton.addEventListener('click', () => {
+                const courseName = course.querySelector('td:nth-child(2)').textContent;
+                const facultyName = course.querySelector('td:nth-child(3)').textContent;
+
+                const newRow = document.createElement('tr');
+                const srNumberCell = document.createElement('td');
+                const courseNameCell = document.createElement('td');
+                const facultyNameCell = document.createElement('td');
+                const actionsCell = document.createElement('td');
+                const approvedButton = document.createElement('button');
+
+                srNumberCell.textContent = selectedCoursesTable.childElementCount + 1;
+                courseNameCell.textContent = courseName;
+                facultyNameCell.textContent = facultyName;
+
+                approvedButton.classList.add('approved-button');
+                approvedButton.textContent = 'Approved';
+                actionsCell.appendChild(approvedButton);
+
+                newRow.appendChild(srNumberCell);
+                newRow.appendChild(courseNameCell);
+                newRow.appendChild(facultyNameCell);
+                newRow.appendChild(actionsCell);
+
+                selectedCoursesTable.appendChild(newRow);
+
+                addButton.disabled = true;
+                addButton.classList.add('disabled');
+            });
+        });
+
+        resetButton.addEventListener('click', () => {
+            selectedCoursesTable.innerHTML = '';
+            availableCourses.forEach((course) => {
+                const addButton = course.querySelector('.add-button');
+                addButton.disabled = false;
+            });
+        });
+    });
+
+    function resetTable() {
+        const selectedCoursesTable = document.querySelector('#selected-courses tbody');
+        const availableCourses = document.querySelectorAll('#available-courses tbody tr');
+
+        selectedCoursesTable.innerHTML = '';
+
+        availableCourses.forEach((course) => {
+            const addButton = course.querySelector('.add-button');
+            addButton.disabled = false;
+            addButton.classList.remove('disabled');
+        });
+    }
+
+    function submitCourses() {
+        alert('Courses registered successfully');
+    }
+
+
+  </script>
+</body>
+
+</html>

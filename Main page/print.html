@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Main page/main.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow-x: hidden;
+            font-family: 'Josefin sans', sans-serif;
+
+        }
+
+        ::-webkit-scrollbar {
+            width: 0;
+            /* Remove scrollbar space */
+            background: transparent;
+            /* Optional: just make scrollbar invisible */
+        }
+
+        .main {
+            border: 2px solid black;
+            display: grid;
+            grid-template-columns: 100vw 1fr;
+            grid-template-rows: 14vh 100vh;
+
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 10%;
+            padding-right: 3%;
+        }
+
+        nav ul li a {
+            color: #4C6FBF;
+            text-decoration: none;
+            font-weight: 200;
+        }
+
+        .home {
+            color: white;
+            text-decoration: none;
+            font-weight: bolder;
+            font-size: larger;
+        }
+
+        nav ul li {
+            height: 110px;
+            list-style: none;
+            display: inline-block;
+            padding: 0 15px;
+            padding-top: 50px;
+        }
+
+        /* nav ul{
+        padding-top: 4%;
+        padding-bottom: 2%;
+    } */
+
+        nav ul li:nth-child(1) {
+            text-align: center;
+            width: 135px;
+            background-color: #4C6FBF;
+            color: white;
+            text-decoration-color: aliceblue;
+            border-bottom-left-radius: 30%;
+            border-bottom-right-radius: 30%;
+        }
+
+        /* nav ul li> a:hover{
+        color: white;
+        background-color: #4C6FBF;
+    
+    } */
+
+
+        .navField {
+            font-size: 14px;
+            background: transparent;
+            border: none;
+            padding: 1em 1.5em;
+            color: #4c6fbf;
+            text-transform: uppercase;
+            position: relative;
+            transition: .5s ease;
+            font-weight: bold;
+        }
+
+        .navField::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 2px;
+            width: 0;
+            background-color: #4c6fbf;
+            transition: .5s ease;
+        }
+
+        .navField:hover {
+            font-weight: bolder;
+            color: #fdfdfd;
+            transition-delay: .5s;
+        }
+
+        .navField:hover::before {
+            width: 96%;
+        }
+
+        .navField::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 0;
+            width: 96%;
+            background-color: #4c6fbf;
+            transition: .4s ease;
+            z-index: -1;
+        }
+
+        .navField:hover::after {
+            height: 96%;
+            transition-delay: 0.4s;
+            color: aliceblue;
+        }
+
+
+        nav img {
+        
+            height: 80px;
+        }
+
+        nav h3 {
+            color: #4C6FBF;
+        }
+
+        .mainPage {
+            grid-column-start: 1;
+
+        }
+
+        .page {
+            margin: 80px 100px;
+            border: 3px solid rgb(79, 21, 161);
+            border-radius: 10px;
+            padding: 50px;
+        }
+
+
+        .bordered-table {
+            border-collapse: collapse;
+            width: 100%;
+            text-align: center;
+        }
+
+        .bordered-table td {
+            border-top: 1px solid black;
+            border-bottom: 2px solid black;
+            width: 20%;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .bordered-table tr:first-child td {
+            border-top: 2px solid black;
+            font-weight: bold;
+        }
+
+        .gridcontainer {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            /* Two columns with equal width */
+            grid-gap: 10px;
+            margin-top: 50px;
+            padding: 15px;
+        }
+
+        .left {
+            text-align: left;
+            margin-left: 40px;
+        }
+
+        .right {
+            text-align: right;
+            margin-right: 40px;
+        }
+
+        .btn {
+            background-color: #4c6fbf;
+            color: white;
+            padding: 5px 15px;
+            border: none;
+            border-radius: 10px;
+        }
+        .bordered-table {
+            border-collapse: collapse;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .bordered-table td {
+            border-top: 1px solid black;
+            border-bottom: 2px solid black;
+            padding: 10px;
+        }
+
+        .bordered-table tr:first-child td {
+            font-weight: bold;
+        }
+
+        .gridcontainer {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            /* Two columns with equal width */
+            grid-gap: 10px;
+            margin-top: 50px;
+            padding: 15px;
+            align-items: center;
+            animation: slideInUp 1s ease-in-out;
+        }
+
+        .left {
+            text-align: left;
+            margin-left: 40px;
+        }
+
+        .right {
+            text-align: right;
+            margin-right: 40px;
+        }
+
+        .btn {
+            background-color: (79, 21, 161);
+            color: white;
+            padding: 5px 15px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Animation keyframes */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInUp {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+        <div class="navbar">
+            <nav>
+                <div>
+                    <img src="../images/zab.jpeg" alt="" srcset="">
+                </div>
+                <ul>
+                    <li><a href="../Main page/main.html" class="home">Home</a></li>
+                    <li><a href="../course-dashboard/course.html" class="navField">Course Dashboard</a></li>
+                    <li><a href="../Main page/profile.html" class="navField">Profile</a></li>
+                    <li><a href="../Main page/print.html" class="navField">Printing Report</a></li>
+                    <li><a href="#" class="navField">About us</a></li>
+                    <li>
+                        <!-- logout btn -->
+                        <button class="Btn">
+
+                            <div class="sign"><svg viewBox="0 0 512 512">
+                                    <path
+                                        d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z">
+                                    </path>
+                                </svg></div>
+                            <div class="text">Logout<br>
+                            </div>
+                        </button>
+
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="mainPage">
+
+            <div class="page">
+
+                <table class="bordered-table">
+                    <tr>
+                        <td> Print Data </td>
+                        <td> Document Name </td>
+                        <td> No. of pages </td>
+                        <td> Printing Charge </td>
+                        <td> Total Charge </td>
+                    </tr>
+
+                    <tr>
+                        <td> 01/12/2023</td>
+                        <td> Example Document Name</td>
+                        <td> 4 </td>
+                        <td> $10 </td>
+                        <td> $100 </td>
+                    </tr>
+
+                </table>
+
+                <div class="gridcontainer">
+                    <div class="left">
+                        ExampleDocument.doc
+                    </div>
+                    <div class="right">
+                        <button class="btn"> Upload</button>
+                    </div>
+                </div>
+
+                <div class="gridcontainer">
+                    <div class="left">
+                        Grand Total : $100
+                    </div>
+                    <div class="right">
+                        <button class="btn"> Print Report </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+</body>
+
+</html>

@@ -1,0 +1,512 @@
+<!-- Use the updated CSS file and add the class names to the respective elements -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Main page/main.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow-x: hidden;
+            font-family: 'Josefin sans', sans-serif;
+
+        }
+
+        ::-webkit-scrollbar {
+            width: 0;
+            /* Remove scrollbar space */
+            background: transparent;
+            /* Optional: just make scrollbar invisible */
+        }
+
+        .main {
+            border: 2px solid silver;
+            display: grid;
+            grid-template-columns: 100vw 1fr;
+            grid-template-rows: 14vh 100vh;
+
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 10%;
+            padding-right: 3%;
+            height: 100%;
+        }
+
+        nav ul li a {
+            color: #4C6FBF;
+            text-decoration: none;
+            font-weight: 200;
+        }
+
+        .home {
+            color: white;
+            text-decoration: none;
+            font-weight: bolder;
+            font-size: larger;
+        }
+
+        nav ul li {
+            height: 110px;
+            list-style: none;
+            display: inline-block;
+            padding: 0 15px;
+            padding-top: 50px;
+        }
+
+        /* nav ul{
+        padding-top: 4%;
+        padding-bottom: 2%;
+    } */
+
+        nav ul li:nth-child(1) {
+            text-align: center;
+            width: 135px;
+            background-color: #4C6FBF;
+            color: white;
+            text-decoration-color: aliceblue;
+            border-bottom-left-radius: 30%;
+            border-bottom-right-radius: 30%;
+        }
+
+        /* nav ul li> a:hover{
+        color: white;
+        background-color: #4C6FBF;
+    
+    } */
+
+
+        .navField {
+            font-size: 14px;
+            background: transparent;
+            border: none;
+            padding: 1em 1.5em;
+            color: #4c6fbf;
+            text-transform: uppercase;
+            position: relative;
+            transition: .5s ease;
+            font-weight: bold;
+        }
+
+        .navField::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 2px;
+            width: 0;
+            background-color: #4c6fbf;
+            transition: .5s ease;
+        }
+
+        .navField:hover {
+            font-weight: bolder;
+            color: #fdfdfd;
+            transition-delay: .5s;
+        }
+
+        .navField:hover::before {
+            width: 96%;
+        }
+
+        .navField::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 0;
+            width: 96%;
+            background-color: #4c6fbf;
+            transition: .4s ease;
+            z-index: -1;
+        }
+
+        .navField:hover::after {
+            height: 96%;
+            transition-delay: 0.4s;
+            color: aliceblue;
+        }
+
+
+        nav img {
+            height: 80px;
+        }
+
+        nav h3 {
+            color: #4C6FBF;
+        }
+
+        .mainPage {
+            grid-column-start: 1;
+
+        }
+
+        .pagegrid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            /* Two columns with equal width */
+            grid-gap: 10px;
+        }
+
+        .btnarea {
+            padding: 30px;
+            margin: 80px 30px 80px 30px;
+        }
+
+        .info {
+            border: 2px solid rgb(79, 21, 161);
+            border-radius: 20px;
+            width: 100%;
+            padding: 40px;
+        }
+
+        .editbtn {
+            background-color: rgb(79, 21, 161);
+            position: relative;
+            top: 20px;
+            width: 150px;
+            height: 40px;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            margin-left: 45px;
+        }
+
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            /* Two columns with equal width */
+            grid-gap: 10px;
+        }
+
+        .left {
+            width: 100%;
+            border-right: 2px solid rgb(79, 21, 161);
+            padding-right: 15px;
+        }
+
+        .right {
+            width: 100%;
+        }
+
+        .text {
+            font-size: 10px;
+        }
+
+        .textl {
+            font-size: 10px;
+            margin-bottom: -5px;
+        }
+
+        .textr {
+            margin-left: 50%;
+            font-size: 10px;
+            position: relative;
+            bottom: 5px;
+
+        }
+
+        input {
+            font-size: 10px;
+            padding: 5px;
+            margin-bottom: 15px;
+            border: 1px solid rgb(133, 133, 133);
+            width: 100%;
+        }
+
+        .input-row input {
+            display: inline-block;
+            width: 48%;
+        }
+
+        .user {
+            padding: 30px;
+            margin: 80px 20px 80px 20px;
+            text-align: center;
+        }
+
+        .userimg {
+            width: 200px;
+            border-radius: 50%;
+            margin-top: 80px;
+        }
+
+        h1 {
+            margin: 30px;
+            font-size: 40px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .userbtn {
+            background-color: rgb(79, 21, 161);
+            color: white;
+            padding: 10px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 25px;
+            margin-top: 15px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        /* Style for the form */
+        .mainPage .btnarea {
+            margin: 20px auto;
+            margin-left:50px;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .mainPage .btnarea .editbtn {
+            padding: 10px 20px;
+            background-color: #4C6FBF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .mainPage .btnarea .editbtn:hover {
+            background-color: #4C6FBF;
+        }
+
+        /* Style for the input fields and labels */
+        .mainPage .info .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 10px;
+        }
+
+        .mainPage .info .left {
+            grid-column: 1 / span 1;
+        }
+
+        .mainPage .info .right {
+            grid-column: 2 / span 1;
+        }
+
+        .mainPage .info .text {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .mainPage .info input[type="text"],
+        .mainPage .info input[type="number"],
+        .mainPage .info input[type="email"] {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        /* Style for the user section */
+        .mainPage .user {
+            text-align: center;
+            margin-top: 30px;
+            text-decoration: none;
+        }
+
+        .mainPage .user .userimg {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            list-style: none;
+            text-decoration: none;
+
+        }
+
+        .mainPage .user h1 {
+            text-decoration: none;
+
+            margin: 10px 0;
+        }
+
+        .mainPage .user .userbtn {
+            padding: 10px 20px;
+            background-color: #4C6FBF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .mainPage .user .userbtn:hover {
+            background-color: #4C6FBF;
+        }
+        .main {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 14vh 1fr;
+            border: 2px solid silver;
+        }
+        
+        .pagegrid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 10px;
+            padding: 20px;
+        }
+        
+        .btnarea {
+            padding: 30px;
+            margin: 0;
+        }
+        
+        .user {
+            padding: 30px;
+            margin: 0;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+        <div class="navbar">
+            <nav>
+                <div>
+                    <img src="../images/zab.jpeg" alt="" style="width: 150px;" srcset="">
+
+                </div>
+                <ul>
+                    <li><a href="../Main page/main.html" class="home">Home</a></li>
+                    <li><a href="../course-dashboard/course.html" class="navField">Course Dashboard</a></li>
+                    <li><a href="../Main page/profile.html" class="navField">Profile</a></li>
+                    <li><a href="../Main page/print.html" class="navField">Printing Report</a></li>
+                    <li><a href="#" class="navField">About us</a></li>
+                    <li>
+                        <!-- logout btn -->
+                        <button class="Btn">
+
+                            <div class="sign"><svg viewBox="0 0 512 512">
+                                    <path
+                                        d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z">
+                                    </path>
+                                </svg></div>
+                            <div class="text">Logout<br>
+                            </div>
+                        </button>
+
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="mainPage">
+
+            <div class="pagegrid">
+
+
+                <div class="btnarea">
+                    <button class="editbtn">Change Profile</button>
+                    <div class="info">
+                        <div class="grid-container">
+                            <div class="left">
+                                <div class="input-row">
+                                    <div class="textl">First Name:</div>
+                                    <div class="textr">Surname:</div>
+                                    <input type="text" placeholder="First Name">
+                                    <input type="text" placeholder="Last Name">
+                                </div>
+
+                                <div class="text">Father's Name:</div>
+                                <input type="text" placeholder="Father's Name">
+
+                                <div class="text">Father's Occupation:</div>
+                                <input type="text" placeholder="Father's Name">
+
+                                <div class="text">Mailing Address:</div>
+                                <input type="text" placeholder="Address Line 1">
+                                <input type="text" placeholder="Address Line 2">
+                                <input type="text" placeholder="Address Line 3">
+
+                                <div class="text">Permanent Address:</div>
+                                <input type="text" placeholder="Address Line 1">
+                                <input type="text" placeholder="Address Line 2">
+                                <input type="text" placeholder="Address Line 3">
+                            </div>
+
+
+                            <div class="right">
+                                <div class="text">Contact Number:</div>
+                                <input type="number" placeholder="Contact Number">
+
+                                <div class="text">NIC:</div>
+                                <input type="number" placeholder="NIC number">
+
+                                <div class="text">Postal Code:</div>
+                                <input type="number" placeholder="Postal Code">
+
+                                <div class="text">Email Address:</div>
+                                <input type="email" placeholder="Email Address">
+
+                                <div class="text">Blood Group:</div>
+                                <input type="text" placeholder="Blood Group">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+                <div class="user">
+                    <img id="userImage" src="../images/profile.png" class="userimg" alt="user image">
+                    <h1 id="userName" style="margin-top:150px;">Najeeb Ullah</h1>
+                    <button id="uploadImageButton" class="userbtn">Upload</button> <br>
+                    <button class="userbtn"> <a href="../Main page/password.html" style="color: #ffff;">Change Password</a></button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <input type="file" id="imageUpload" style="display: none;">
+    <script>
+        // Add event listeners to handle the upload functionality
+
+        document.getElementById('uploadImageButton').addEventListener('click', function () {
+            document.getElementById('imageUpload').click();
+        });
+
+        document.getElementById('imageUpload').addEventListener('change', function () {
+            const file = this.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                const image = new Image();
+                image.src = e.target.result;
+                image.onload = function () {
+                    // Do something with the uploaded image
+                    // For example, display the image on the page
+                    const userImage = document.getElementById('userImage');
+                    userImage.src = image.src;
+                };
+            };
+
+            if (file) {
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+
+</html>
